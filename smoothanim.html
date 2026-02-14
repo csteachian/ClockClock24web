@@ -109,148 +109,6 @@
           opacity: 0.3;
         }
       }
-
-      .theme-toggle {
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
-        width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(255, 255, 255, 0.2);
-        border: 2px solid rgba(255, 255, 255, 0.4);
-        backdrop-filter: blur(10px);
-        z-index: 1000;
-        transition: all 0.3s ease;
-      }
-
-      .theme-toggle:hover {
-        background: rgba(255, 255, 255, 0.3);
-        border-color: rgba(255, 255, 255, 0.6);
-        transform: scale(1.1);
-      }
-
-      .theme-toggle-icon {
-        width: 1rem;
-        height: 1rem;
-        border-radius: 50%;
-      }
-
-      .theme-menu {
-        position: fixed;
-        top: 4rem;
-        right: 1rem;
-        background: rgba(0, 0, 0, 0.95);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 0.5rem;
-        backdrop-filter: blur(10px);
-        padding: 0.5rem;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 999;
-        max-width: 280px;
-      }
-
-      .theme-menu.active {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .theme-option {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-        cursor: pointer;
-        border-radius: 0.375rem;
-        transition: background 0.2s ease;
-        color: #ffffff;
-        font-size: 0.875rem;
-        white-space: nowrap;
-      }
-
-      .theme-option:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
-
-      .theme-preview {
-        display: flex;
-        gap: 0.25rem;
-      }
-
-      .theme-color-swatch {
-        width: 1.5rem;
-        height: 1.5rem;
-        border-radius: 0.25rem;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-      }
-
-      .theme-divider {
-        height: 1px;
-        background: rgba(255, 255, 255, 0.1);
-        margin: 0.5rem 0;
-      }
-
-      .custom-color-inputs {
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-
-      .custom-color-input-group {
-        display: flex;
-        flex-direction: column;
-        gap: 0.375rem;
-      }
-
-      .custom-color-input-label {
-        color: #ffffff;
-        font-size: 0.75rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-
-      .custom-color-input-wrapper {
-        display: flex;
-        gap: 0.5rem;
-        align-items: center;
-      }
-
-      .custom-color-input-wrapper input {
-        flex: 1;
-        padding: 0.5rem;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 0.25rem;
-        color: #ffffff;
-        font-family: monospace;
-        font-size: 0.875rem;
-      }
-
-      .custom-color-input-wrapper input::placeholder {
-        color: rgba(255, 255, 255, 0.5);
-      }
-
-      .custom-color-input-wrapper input:focus {
-        outline: none;
-        border-color: rgba(255, 255, 255, 0.4);
-        background: rgba(255, 255, 255, 0.15);
-      }
-
-      .custom-color-input-swatch {
-        width: 2.5rem;
-        height: 2.5rem;
-        border-radius: 0.25rem;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        cursor: pointer;
-      }
     </style>
     <style>
       body {
@@ -262,169 +120,20 @@
   <body class="h-full">
     <div class="app-wrapper" id="app">
       <div id="clock-display"></div>
-      <div class="theme-toggle" id="themeToggle">
-        <div
-          class="theme-toggle-icon"
-          id="toggleIcon"
-          style="background: #4a4a4a"
-        ></div>
-      </div>
-      <div class="theme-menu" id="themeMenu">
-        <div class="theme-option" data-theme="default">
-          <span>Default</span>
-          <div class="theme-preview">
-            <div class="theme-color-swatch" style="background: #f5f5f5"></div>
-            <div class="theme-color-swatch" style="background: #ffffff"></div>
-            <div class="theme-color-swatch" style="background: #4a4a4a"></div>
-          </div>
-        </div>
-        <div class="theme-option" data-theme="neon-cyan">
-          <span>Neon Cyan</span>
-          <div class="theme-preview">
-            <div class="theme-color-swatch" style="background: #0a0a0a"></div>
-            <div class="theme-color-swatch" style="background: #1a1a1a"></div>
-            <div class="theme-color-swatch" style="background: #00d9ff"></div>
-          </div>
-        </div>
-        <div class="theme-option" data-theme="electric-green">
-          <span>Electric Green</span>
-          <div class="theme-preview">
-            <div class="theme-color-swatch" style="background: #0f0f0f"></div>
-            <div class="theme-color-swatch" style="background: #1a1a1a"></div>
-            <div class="theme-color-swatch" style="background: #00ff41"></div>
-          </div>
-        </div>
-        <div class="theme-option" data-theme="ice-blue">
-          <span>Ice Blue</span>
-          <div class="theme-preview">
-            <div class="theme-color-swatch" style="background: #0a0a0a"></div>
-            <div class="theme-color-swatch" style="background: #161616"></div>
-            <div class="theme-color-swatch" style="background: #00bfff"></div>
-          </div>
-        </div>
-        <div class="theme-option" data-theme="neon-orange">
-          <span>Neon Orange</span>
-          <div class="theme-preview">
-            <div class="theme-color-swatch" style="background: #0d0d0d"></div>
-            <div class="theme-color-swatch" style="background: #1a1a1a"></div>
-            <div class="theme-color-swatch" style="background: #ff6600"></div>
-          </div>
-        </div>
-        <div class="theme-divider"></div>
-        <div class="custom-color-inputs">
-          <div class="custom-color-input-group">
-            <label class="custom-color-input-label">Background</label>
-            <div class="custom-color-input-wrapper">
-              <input
-                type="text"
-                id="bgColorInput"
-                placeholder="#0f0f0f"
-                maxlength="7"
-              />
-              <input
-                type="color"
-                id="bgColorPicker"
-                class="custom-color-input-swatch"
-              />
-            </div>
-          </div>
-          <div class="custom-color-input-group">
-            <label class="custom-color-input-label">Clock Face</label>
-            <div class="custom-color-input-wrapper">
-              <input
-                type="text"
-                id="faceColorInput"
-                placeholder="#1a1a1a"
-                maxlength="7"
-              />
-              <input
-                type="color"
-                id="faceColorPicker"
-                class="custom-color-input-swatch"
-              />
-            </div>
-          </div>
-          <div class="custom-color-input-group">
-            <label class="custom-color-input-label">Hand Color</label>
-            <div class="custom-color-input-wrapper">
-              <input
-                type="text"
-                id="handColorInput"
-                placeholder="#00ff41"
-                maxlength="7"
-              />
-              <input
-                type="color"
-                id="handColorPicker"
-                class="custom-color-input-swatch"
-              />
-            </div>
-          </div>
-          <div class="custom-color-input-group">
-            <label class="custom-color-input-label">Colon</label>
-            <div class="custom-color-input-wrapper">
-              <input
-                type="text"
-                id="accentColorInput"
-                placeholder="#999999"
-                maxlength="7"
-              />
-              <input
-                type="color"
-                id="accentColorPicker"
-                class="custom-color-input-swatch"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <script>
       // Default configuration
       const defaultConfig = {
-        background_color_input: "#f5f5f5",
-        clock_face_color_input: "#ffffff",
-        hand_color_input: "#4a4a4a",
-        accent_color_input: "#999999",
-      };
-
-      const themePresets = {
-        default: {
-          background_color_input: "#f5f5f5",
-          clock_face_color_input: "#ffffff",
-          hand_color_input: "#4a4a4a",
-          accent_color_input: "#999999",
-        },
-        "neon-cyan": {
-          background_color_input: "#0a0a0a",
-          clock_face_color_input: "#1a1a1a",
-          hand_color_input: "#00d9ff",
-          accent_color_input: "#b300ff",
-        },
-        "electric-green": {
-          background_color_input: "#0f0f0f",
-          clock_face_color_input: "#1a1a1a",
-          hand_color_input: "#00ff41",
-          accent_color_input: "#ff0055",
-        },
-        "ice-blue": {
-          background_color_input: "#0a0a0a",
-          clock_face_color_input: "#161616",
-          hand_color_input: "#00bfff",
-          accent_color_input: "#ffd700",
-        },
-        "neon-orange": {
-          background_color_input: "#0d0d0d",
-          clock_face_color_input: "#1a1a1a",
-          hand_color_input: "#ff6600",
-          accent_color_input: "#00ffcc",
-        },
+        background_color_input: "#0f0f0f",
+        clock_face_color_input: "#1a1a1a",
+        hand_color_input: "#00ff41",
+        accent_color_input: "#ff0055",
       };
 
       let config = { ...defaultConfig };
       let currentTime = "";
 
-      // Digit patterns
+      // Digit patterns - hour and minute positions based on clock face (0-12 hours, 0-60 minutes)
       const digits = [
         [
           // 0
@@ -608,6 +317,7 @@
 
         let clockId = 0;
 
+        // First digit
         const digitGrid1 = document.createElement("div");
         digitGrid1.className = "digit-grid";
         digits1.forEach((pos) => {
@@ -616,6 +326,7 @@
         });
         display.appendChild(digitGrid1);
 
+        // Second digit
         const digitGrid2 = document.createElement("div");
         digitGrid2.className = "digit-grid";
         digits2.forEach((pos) => {
@@ -624,6 +335,7 @@
         });
         display.appendChild(digitGrid2);
 
+        // Colon
         const accentColor = isValidHexColor(config.accent_color_input)
           ? config.accent_color_input
           : defaultConfig.accent_color_input;
@@ -635,6 +347,7 @@
       `;
         display.appendChild(colon);
 
+        // Third digit
         const digitGrid3 = document.createElement("div");
         digitGrid3.className = "digit-grid";
         digits3.forEach((pos) => {
@@ -643,6 +356,7 @@
         });
         display.appendChild(digitGrid3);
 
+        // Fourth digit
         const digitGrid4 = document.createElement("div");
         digitGrid4.className = "digit-grid";
         digits4.forEach((pos) => {
@@ -650,26 +364,6 @@
           clockId++;
         });
         display.appendChild(digitGrid4);
-      }
-
-      function updateColorInputs() {
-        document.getElementById("bgColorInput").value =
-          config.background_color_input;
-        document.getElementById("faceColorInput").value =
-          config.clock_face_color_input;
-        document.getElementById("handColorInput").value =
-          config.hand_color_input;
-        document.getElementById("accentColorInput").value =
-          config.accent_color_input;
-
-        document.getElementById("bgColorPicker").value =
-          config.background_color_input;
-        document.getElementById("faceColorPicker").value =
-          config.clock_face_color_input;
-        document.getElementById("handColorPicker").value =
-          config.hand_color_input;
-        document.getElementById("accentColorPicker").value =
-          config.accent_color_input;
       }
 
       function applyConfig() {
@@ -680,84 +374,7 @@
         document.getElementById("app").style.background = bgColor;
         currentTime = "";
         createInitialDisplay();
-        updateColorInputs();
       }
-
-      // Theme menu interactions
-      const themeToggle = document.getElementById("themeToggle");
-      const themeMenu = document.getElementById("themeMenu");
-      const toggleIcon = document.getElementById("toggleIcon");
-
-      themeToggle.addEventListener("click", (e) => {
-        e.stopPropagation();
-        themeMenu.classList.toggle("active");
-      });
-
-      document.addEventListener("click", (e) => {
-        if (
-          !themeMenu.contains(e.target) &&
-          e.target !== themeToggle &&
-          !themeToggle.contains(e.target)
-        ) {
-          themeMenu.classList.remove("active");
-        }
-      });
-
-      // Theme preset selection
-      document.querySelectorAll("[data-theme]").forEach((option) => {
-        option.addEventListener("click", () => {
-          const themeName = option.dataset.theme;
-          const theme = themePresets[themeName];
-          config = { ...config, ...theme };
-          applyConfig();
-          themeMenu.classList.remove("active");
-        });
-      });
-
-      // Custom color inputs
-      const colorInputs = [
-        {
-          input: "bgColorInput",
-          picker: "bgColorPicker",
-          key: "background_color_input",
-        },
-        {
-          input: "faceColorInput",
-          picker: "faceColorPicker",
-          key: "clock_face_color_input",
-        },
-        {
-          input: "handColorInput",
-          picker: "handColorPicker",
-          key: "hand_color_input",
-        },
-        {
-          input: "accentColorInput",
-          picker: "accentColorPicker",
-          key: "accent_color_input",
-        },
-      ];
-
-      colorInputs.forEach(({ input, picker, key }) => {
-        const inputEl = document.getElementById(input);
-        const pickerEl = document.getElementById(picker);
-
-        inputEl.addEventListener("input", (e) => {
-          const value = e.target.value;
-          if (isValidHexColor(value)) {
-            config[key] = value;
-            pickerEl.value = value;
-            applyConfig();
-          }
-        });
-
-        pickerEl.addEventListener("input", (e) => {
-          const value = e.target.value;
-          config[key] = value;
-          inputEl.value = value;
-          applyConfig();
-        });
-      });
 
       // Initialize
       async function init() {
@@ -774,7 +391,27 @@
               fontEditable: undefined,
               fontSizeable: undefined,
             }),
-            mapToEditPanelValues: (cfg) => new Map([]),
+            mapToEditPanelValues: (cfg) =>
+              new Map([
+                [
+                  "background_color_input",
+                  cfg.background_color_input ||
+                    defaultConfig.background_color_input,
+                ],
+                [
+                  "clock_face_color_input",
+                  cfg.clock_face_color_input ||
+                    defaultConfig.clock_face_color_input,
+                ],
+                [
+                  "hand_color_input",
+                  cfg.hand_color_input || defaultConfig.hand_color_input,
+                ],
+                [
+                  "accent_color_input",
+                  cfg.accent_color_input || defaultConfig.accent_color_input,
+                ],
+              ]),
           });
           config = { ...defaultConfig, ...window.elementSdk.config };
         }
@@ -792,7 +429,7 @@
           if (b) {
             var d = b.createElement("script");
             d.innerHTML =
-              "window.__CF$cv$params={r:'9cde0fd903817798',t:'MTc3MTA4Nzc5OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+              "window.__CF$cv$params={r:'9cde0865124738b1',t:'MTc3MTA4NzQ5NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
             b.getElementsByTagName("head")[0].appendChild(d);
           }
         }
